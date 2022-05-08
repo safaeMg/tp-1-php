@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+    <!--<![endif]-->
+    <head>
+        <!-- Required meta tags -->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="description" content="Project Description" />
+        <meta name="author" content="Project Author" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <title>Project Title</title>
+        <!-- CSS Libraries -->
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" />
+    </head>
+    <body class="bg-light">
+        <div class="container col-md-6 my-3">
+            <form action="affiche_parametres.php" method="post" autocomplete="off" enctype="multipart/form-data">
+                <div class="row mb-3">
+                    <label for="name" class="col-sm-4 col-form-label">Votre nom d'utilisateur <sup class="fw-bold text-danger">*</sup></label>
+                    <div class="col-sm-8">
+                        <input type="text" id="name" class="form-control" name="name" value="" autofocus required />
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="password" class="col-sm-4 col-form-label">Votre mot de passe <sup class="fw-bold text-danger">*</sup></label>
+                    <div class="col-sm-8">
+                        <input type="password" id="password" class="form-control" name="password" value="" required />
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="jobs" class="col-sm-4 col-form-label">Votre Profession</label>
+                    <div class="col-sm-8">
+                        <select id="jobs" class="form-select" name="jobs[]" multiple>
+                            <option value="Information Security Analyst" selected>Information Security Analyst</option>
+                            <option value="Nurse Practitioner">Nurse Practitioner</option>
+                            <option value="Physician Assistant">Physician Assistant</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="country" class="col-sm-4 col-form-label">Votre Pays</label>
+                    <div class="col-sm-8">
+                        <select id="country" class="form-select" name="country">
+                            <option value="Morocco" selected>Morocco</option>
+                            <option value="USA">United States of America</option>
+                            <option value="China">China</option>
+                            <option value="India">India</option>
+                            <option value="France">France</option>
+                            <option value="Czech">Czech</option>
+                            <option value="Italy">Italy</option>
+                            <option value="Japan">Japan</option>
+                            <option value="Egypt">Egypt</option>
+                            <option value="Togo">Togo</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-4 col-form-label">Votre Sexe</label>
+                    <div class="col-sm-8">
+                        <div class="form-check form-check-inline">
+                            <input type="radio" id="male" class="form-check-input" name="gender" value="Homme" checked />
+                            <label for="male" class="form-check-label">Homme</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" id="female" class="form-check-input" name="gender" value="Femelle" />
+                            <label for="female" class="form-check-label">Femelle</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="language" class="col-sm-4 col-form-label">Votre Langue</label>
+                    <div class="col-sm-8">
+                        <select id="language" class="form-select" name="language">
+                            <option value="Moroccan Arabic" selected>Moroccan Arabic</option>
+                            <option value="English">English</option>
+                            <option value="French">French</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-4 col-form-label">Votre Loisir</label>
+                    <div class="col-sm-8">
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" id="swimming" class="form-check-input" name="hobbies[]" value="La natation" checked />
+                            <label for="swimming" class="form-check-label">La natation</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" id="baseball" class="form-check-input" name="hobbies[]" value="Base-ball" />
+                            <label for="baseball" class="form-check-label">Base-ball</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" id="dancing" class="form-check-input" name="hobbies[]" value="Dansante" />
+                            <label for="dancing" class="form-check-label">Dansante</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" id="fishing" class="form-check-input" name="hobbies[]" value="Pêche" />
+                            <label for="fishing" class="form-check-label">Pêche</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="resume" class="col-sm-4 col-form-label">Votre CV <span class="badge bg-info ms-2">PDF</span> <span class="badge bg-danger ms-2">1 MB</span></label>
+                    <div class="col-sm-8">
+                        <input type="file" id="resume" class="form-control" name="resume" />
+                    </div>
+                </div>
+                <hr />
+                <div class="d-grid gap-3 d-md-flex justify-content-md-between">
+                    <input type="reset" class="btn btn-lg btn-warning" name="reset" value="Vider" />
+                    <input type="submit" class="btn btn-lg btn-success" name="submit" value="Valider" />
+                    <input type="reset" class="btn btn-lg btn-danger" name="reset" value="Rétablir" />
+                </div>
+            </form>
+        </div>
+        <!-- JS Libraries -->
+        <script src="js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
